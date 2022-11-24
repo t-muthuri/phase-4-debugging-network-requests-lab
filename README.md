@@ -63,11 +63,19 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  . Opened the rails server log to look for the last request that came through.
+  . Request: NameError (uninitialized constant ToysController::Toys):
+  . Changed the constant from Toys to Toy
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  . Error: Uncaught (in promise) SyntaxError: Unexpected end of JSON input at ToyCard.js:27:1
+  . jsonified the data from update
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+   . Opened the rails server log to look for the last request that came through.
+  . Request: ActionController::RoutingError (No route matches [GET] "/toy"):
+  In the routes.rb I added :destroy
